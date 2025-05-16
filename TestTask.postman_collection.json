@@ -1,0 +1,208 @@
+{
+  "info": {
+    "name": "TestTask API",
+    "_postman_id": "e51f6a88-9abf-4bbf-9430-1111testtask",
+    "description": "User & Subscription Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "API_URL",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Add User",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"username\": \"q2eq\",\n\t\"email\": \"slavacom@gmail.com\"\n}"
+            },
+            "url": {
+              "raw": "{{API_URL}}/users",
+              "host": ["{{API_URL}}"],
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "Get User",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{API_URL}}/users/12",
+              "host": ["{{API_URL}}"],
+              "path": ["users", "12"]
+            }
+          }
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{API_URL}}/users",
+              "host": ["{{API_URL}}"],
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"username\": \"ada\",\n\t\"email\": \"adadad@gmail.com\"\n}"
+            },
+            "url": {
+              "raw": "{{API_URL}}/users/14",
+              "host": ["{{API_URL}}"],
+              "path": ["users", "14"]
+            }
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{API_URL}}/users/13",
+              "host": ["{{API_URL}}"],
+              "path": ["users", "13"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Subscriptions",
+      "item": [
+        {
+          "name": "Add Subscription",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"qaa234ez\"\n}"
+            },
+            "url": {
+              "raw": "{{API_URL}}/subscriptions",
+              "host": ["{{API_URL}}"],
+              "path": ["subscriptions"]
+            }
+          }
+        },
+        {
+          "name": "Get All Subscriptions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{API_URL}}/subscriptions",
+              "host": ["{{API_URL}}"],
+              "path": ["subscriptions"]
+            }
+          }
+        },
+        {
+          "name": "Get Subscription by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{API_URL}}/subscriptions/3",
+              "host": ["{{API_URL}}"],
+              "path": ["subscriptions", "3"]
+            }
+          }
+        },
+        {
+          "name": "Update Subscription",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"qaaz123\"\n}"
+            },
+            "url": {
+              "raw": "{{API_URL}}/subscriptions/123",
+              "host": ["{{API_URL}}"],
+              "path": ["subscriptions", "123"]
+            }
+          }
+        },
+        {
+          "name": "Delete Subscription",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{API_URL}}/subscriptions/5",
+              "host": ["{{API_URL}}"],
+              "path": ["subscriptions", "5"]
+            }
+          }
+        },
+        {
+          "name": "Get Top Subscriptions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{API_URL}}/subscriptions/top",
+              "host": ["{{API_URL}}"],
+              "path": ["subscriptions", "top"]
+            }
+          }
+        },
+        {
+          "name": "Get Subscriptions by User ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{API_URL}}/subscriptions/user/12",
+              "host": ["{{API_URL}}"],
+              "path": ["subscriptions", "user", "12"]
+            }
+          }
+        },
+        {
+          "name": "Add Subscription to User",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{API_URL}}/subscriptions/sub/2/user/12",
+              "host": ["{{API_URL}}"],
+              "path": ["subscriptions", "sub", "2", "user", "12"]
+            }
+          }
+        },
+        {
+          "name": "Remove Subscription from User",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{API_URL}}/subscriptions/sub/3/user/12",
+              "host": ["{{API_URL}}"],
+              "path": ["subscriptions", "sub", "3", "user", "12"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
