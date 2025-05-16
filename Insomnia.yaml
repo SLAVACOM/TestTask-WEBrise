@@ -1,0 +1,357 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_08e062800a604af6937e4e694c4c9c0e
+  created: 1747421203741
+  modified: 1747421203741
+collection:
+  - name: Users
+    meta:
+      id: fld_ed975ec54a4242f1806f4af89194ac88
+      created: 1747424187994
+      modified: 1747424187994
+      sortKey: -1747424187994
+    children:
+      - url: "{{ _.API_URL }}/users"
+        name: add user
+        meta:
+          id: req_0a31c7e8ed494efb94c9e4da0862b3e2
+          created: 1747421203828
+          modified: 1747433214555
+          isPrivate: false
+          sortKey: -1747424192780
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username": "q2eq",
+            	"email": "slavacom@gmail.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API_URL }}/users/12"
+        name: get user
+        meta:
+          id: req_e5c28a6a74854abeb42beff1dffbc5d9
+          created: 1747423229817
+          modified: 1747433166574
+          isPrivate: false
+          sortKey: -1747424193080
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API_URL }}/users"
+        name: get all users
+        meta:
+          id: req_0929defd3b9b465c9332803c321d2ce9
+          created: 1747423464204
+          modified: 1747433170659
+          isPrivate: false
+          sortKey: -1747424193180
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API_URL }}/users/14"
+        name: update user
+        meta:
+          id: req_4860ddbb6d16405dafeca5758d52f1f3
+          created: 1747423506133
+          modified: 1747424193745
+          isPrivate: false
+          sortKey: -1747424192880
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username": "ada",
+            	"email": "adadad@gmail.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API_URL }}/users/13"
+        name: delete user
+        meta:
+          id: req_5f274e2952be4a07a490d4a27fecebf5
+          created: 1747424103731
+          modified: 1747424194808
+          isPrivate: false
+          sortKey: -1747424192980
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Subscriptions
+    meta:
+      id: fld_9b18ac2ec51740c6b67cae91b16e76de
+      created: 1747424205455
+      modified: 1747428641893
+      sortKey: -1747424205455
+    children:
+      - name: user
+        meta:
+          id: fld_cf0039d3dbcd4a70b0d0ddece88ea020
+          created: 1747425382441
+          modified: 1747434058601
+          sortKey: -1747425382441
+        children:
+          - url: "{{ _.API_URL }}/subscriptions/sub/2/user/12"
+            name: add
+            meta:
+              id: req_b057153b133645168e0f420053dc5554
+              created: 1747424207680
+              modified: 1747428781908
+              isPrivate: false
+              sortKey: -1747425394031
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.API_URL }}/subscriptions/sub/3/user/12"
+            name: remove
+            meta:
+              id: req_2371fe4891b648cd97e90f59196563f2
+              created: 1747428350147
+              modified: 1747428351867
+              isPrivate: false
+              sortKey: -1747425345409.5
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - url: "{{ _.API_URL }}/subscriptions/3"
+        name: get by id
+        meta:
+          id: req_e09e8889ba1945668fc4d0ef2392d763
+          created: 1747424502192
+          modified: 1747428647458
+          isPrivate: false
+          sortKey: -1747424200430
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API_URL }}/subscriptions"
+        name: get all
+        meta:
+          id: req_de00586133904f69a5a124cef7439ff9
+          created: 1747424737343
+          modified: 1747425293629
+          isPrivate: false
+          sortKey: -1747424196805
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API_URL }}/subscriptions/123"
+        name: update
+        meta:
+          id: req_a971dc5b7e964511a74bddf1b15a59de
+          created: 1747425207526
+          modified: 1747425241783
+          isPrivate: false
+          sortKey: -1747424204055
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"qaaz123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API_URL }}/subscriptions/5"
+        name: delete
+        meta:
+          id: req_056d026cc3c44458a1f6e4d2dce59200
+          created: 1747425260672
+          modified: 1747425291439
+          isPrivate: false
+          sortKey: -1747424196705
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API_URL }}/subscriptions"
+        name: add
+        meta:
+          id: req_fee7309576bf42c9b0e8c7931c5b4785
+          created: 1747425390481
+          modified: 1747428743831
+          isPrivate: false
+          sortKey: -1747424205867.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"qaa234ez"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API_URL }}/subscriptions/top"
+        name: get top
+        meta:
+          id: req_b7d3c9a6967b4cf5ba46697d65fd2055
+          created: 1747427833453
+          modified: 1747434062362
+          isPrivate: false
+          sortKey: -1747425382541
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.API_URL }}/subscriptions/user/12"
+        name: get by user d
+        meta:
+          id: req_0e0dc8ed5ec04efbab0f77bf7bf8dd78
+          created: 1747428654543
+          modified: 1747428708709
+          isPrivate: false
+          sortKey: -1747424198617.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_370f11f875c94d0be12732a2bebc4d42c843cbf1
+    created: 1747421203746
+    modified: 1747421203746
+environments:
+  name: Base Environment
+  meta:
+    id: env_370f11f875c94d0be12732a2bebc4d42c843cbf1
+    created: 1747421203744
+    modified: 1747421249532
+    isPrivate: false
+  data:
+    API_URL: http://localhost:8080
