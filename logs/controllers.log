@@ -1,0 +1,4 @@
+2025-05-17 00:13:00 INFO  [http-nio-8080-exec-1] c.s.t.c.SubscriptionControler - GET /subscriptions/user/12 — Fetching user subscriptions
+2025-05-17 00:13:00 INFO  [http-nio-8080-exec-1] c.s.t.c.SubscriptionControler - GET /subscriptions/user/12 — Found 4 subscriptions
+2025-05-17 00:13:15 INFO  [http-nio-8080-exec-2] c.s.t.c.SubscriptionControler - GET /subscriptions/user/12 — Fetching user subscriptions
+2025-05-17 00:13:15 INFO  [http-nio-8080-exec-2] c.s.t.c.SubscriptionControler - GET /subscriptions/user/12 — Found 4 subscriptions
