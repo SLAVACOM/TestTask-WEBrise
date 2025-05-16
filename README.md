@@ -72,6 +72,11 @@
 
 ---
 
+
+Для удобства работы с API можно воспользоваться 
+- [Коллекция Postman (JSON)](./TestTask.postman_collection.json)
+- [Коллекция Insomnia (YAML)](./Insomnia.yaml)
+
 ## Контакты
 
 - Автор: [SLAVACOM](https://github.com/SLAVACOM)
