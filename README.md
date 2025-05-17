@@ -44,7 +44,7 @@
    http://localhost:8080/
    ```
 
-### 2. Запуск через Docker Compose
+### 2. Запуск через Docker Compose (локальная сборка)
 
 > Docker Compose автоматически поднимет и приложение, и базу данных в отдельных контейнерах, свяжет их между собой и обеспечит корректную работу без дополнительной настройки.
 
@@ -71,7 +71,52 @@
    (Внешний доступ обычно не требуется — параметры уже прописаны в Compose и application.properties)
 
 ---
+### 3. Запуск через Docker Compose с образом из Docker Hub
 
+>Используется готовый образ из Docker Hub, что позволяет не собирать проект вручную.
+
+1. **Убедитесь, что у вас установлены Docker и Docker Compose.**
+
+Создайте файл `docker-compose.yml` следующего содержания:
+
+```
+services:
+  app:
+    image: slavacom/testtask-webrise:latest
+    container_name: test-task-app
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/userservice
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: "true"
+    networks:
+      - backend
+
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_DB: userservice
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - backend
+volumes:
+  pgdata:
+
+networks:
+  backend:
+```
 
 Для удобства работы с API можно воспользоваться 
 - [Коллекция Postman (JSON)](./TestTask.postman_collection.json)
