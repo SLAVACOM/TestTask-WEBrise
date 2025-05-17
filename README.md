@@ -77,12 +77,12 @@
 
 1. **Убедитесь, что у вас установлены Docker и Docker Compose.**
 
-Создайте файл `docker-compose.yml` следующего содержания:
+2. Создайте файл `docker-compose.remote.yml` следующего содержания:
 
 ```
 services:
   app:
-    image: slavacom/testtask-webrise:latest
+    image: slavacom/test-task-webrise:latest
     container_name: test-task-app
     restart: always
     ports:
@@ -117,6 +117,20 @@ volumes:
 networks:
   backend:
 ```
+
+3. **Запустите приложение:**
+   ```bash
+   docker compose up
+   ```
+   или 
+   ```bash
+   docker-compose up
+   ```
+4. **API будет доступен по адресу:**  
+   ```
+   http://localhost:8080/
+   ```
+
 
 Для удобства работы с API можно воспользоваться 
 - [Коллекция Postman (JSON)](./TestTask.postman_collection.json)
